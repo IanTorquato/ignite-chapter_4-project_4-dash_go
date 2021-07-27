@@ -12,19 +12,19 @@ export const theme = extendTheme({
       600: '#4b4d63',
       700: '#353646',
       800: '#1f2029',
-      900: '#181b23'
-    }
+      900: '#181b23',
+    },
   },
   fonts: {
     body: 'Roboto',
-    heading: 'Roboto'
+    heading: 'Roboto',
   },
   styles: {
-    global:{
+    global: {
       body: {
         bg: 'gray.900',
         color: 'gray.50',
-      }
-    }
-  }
+      },
+    },
+  },
 });
