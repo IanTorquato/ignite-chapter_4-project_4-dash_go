@@ -25,7 +25,7 @@
         "newlinesBetween": "always",
         "groups": [
           "module",
-          // "/^@shared/",
+          "/^@dashgo/",
           [
             "parent",
             "sibling",
@@ -62,5 +62,33 @@
     "no-shadow": "off",
     "no-useless-constructor": "off",
     "prettier/prettier": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "extensions": [
+          ".ts",
+          ".tsx"
+        ],
+        "map": [
+          [
+            "@dashgo/public",
+            "./public"
+          ],
+          [
+            "@dashgo/components",
+            "./src/components"
+          ],
+          [
+            "@dashgo/pages",
+            "./src/pages"
+          ],
+          [
+            "@dashgo/styles",
+            "./src/styles"
+          ]
+        ]
+      }
+    }
   }
 }

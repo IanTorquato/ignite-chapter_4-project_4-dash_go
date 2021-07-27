@@ -1,0 +1,11 @@
+{
+  "cSpell.words": [
+    "dashgo"
+  ],
+  "editor.fontSize": 14,
+  "editor.rulers": [
+    126
+  ],
+  "eslint.run": "onSave",
+  "window.zoomLevel": 0
+}
