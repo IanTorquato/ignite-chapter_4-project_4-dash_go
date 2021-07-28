@@ -5,7 +5,7 @@ import { Header } from '@dashgo/components/Header';
 import { Pagination } from '@dashgo/components/Pagination';
 import { Sidebar } from '@dashgo/components/Sidebar';
 
-export default function userList() {
+export default function UserList() {
   return (
     <Box>
       <Header />
