@@ -12,7 +12,7 @@ export default function SignIn() {
           <Input type="password" name="password" label="Senha" />
         </Stack>
 
-        <Button type="submit" mt={6} colorScheme="blue" size="lg">
+        <Button type="submit" mt={6} colorScheme="pink" size="lg">
           Entrar
         </Button>
       </Flex>
