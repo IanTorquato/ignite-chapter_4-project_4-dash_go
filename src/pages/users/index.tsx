@@ -2,6 +2,7 @@ import { Box, Button, Checkbox, Flex, Heading, Icon, Table, Tbody, Td, Text, Th,
 import { RiAddBoxLine, RiPencilLine } from 'react-icons/ri';
 
 import { Header } from '@dashgo/components/Header';
+import { Pagination } from '@dashgo/components/Pagination';
 import { Sidebar } from '@dashgo/components/Sidebar';
 
 export default function userList() {
@@ -69,6 +70,7 @@ export default function userList() {
               </Tr>
             </Tbody>
           </Table>
+          <Pagination />
         </Box>
       </Flex>
     </Box>
