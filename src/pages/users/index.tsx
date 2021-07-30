@@ -14,7 +14,8 @@ import {
   Tr,
   useBreakpointValue,
 } from '@chakra-ui/react';
-import { RiAddBoxLine, RiPencilLine } from 'react-icons/ri';
+import Link from 'next/link';
+import { RiAddBoxLine } from 'react-icons/ri';
 
 import { Header } from '@dashgo/components/Header';
 import { Pagination } from '@dashgo/components/Pagination';
@@ -39,9 +40,11 @@ export default function UserList() {
               Usuários
             </Heading>
 
-            <Button as="a" size="sm" fontSize="sm" colorScheme="pink" leftIcon={<Icon as={RiAddBoxLine} fontSize="20" />}>
-              Criar novo usuário
-            </Button>
+            <Link href="users/create" passHref>
+              <Button as="a" size="sm" fontSize="sm" colorScheme="pink" leftIcon={<Icon as={RiAddBoxLine} fontSize="20" />}>
+                Criar novo usuário
+              </Button>
+            </Link>
           </Flex>
 
           <Table colorScheme="whiteAlpha">
