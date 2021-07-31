@@ -5,13 +5,13 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
-import { api } from 'src/services/api';
-import { queryClient } from 'src/services/queryClient';
 import * as yup from 'yup';
 
 import { Input } from '@dashgo/components/Form/Input';
 import { Header } from '@dashgo/components/Header';
 import { Sidebar } from '@dashgo/components/Sidebar';
+import { api } from '@dashgo/services/api';
+import { queryClient } from '@dashgo/services/queryClient';
 
 type CreateUserFormData = {
   name: string;

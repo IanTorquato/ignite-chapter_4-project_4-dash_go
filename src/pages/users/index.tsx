@@ -20,13 +20,13 @@ import {
 import NextLink from 'next/link';
 import { useState } from 'react';
 import { RiAddBoxLine } from 'react-icons/ri';
-import { api } from 'src/services/api';
-import { useUsers } from 'src/services/hooks/useUsers';
-import { queryClient } from 'src/services/queryClient';
 
 import { Header } from '@dashgo/components/Header';
 import { Pagination } from '@dashgo/components/Pagination';
 import { Sidebar } from '@dashgo/components/Sidebar';
+import { api } from '@dashgo/services/api';
+import { useUsers } from '@dashgo/services/hooks/useUsers';
+import { queryClient } from '@dashgo/services/queryClient';
 
 export default function UserList() {
   const [currentPage, setCurrentPage] = useState(1);

@@ -21,8 +21,14 @@
       "@dashgo/components/*": [
         "./src/components/*"
       ],
+      "@dashgo/contexts/*": [
+        "./src/contexts/*"
+      ],
       "@dashgo/pages/*": [
         "./src/pages/*"
+      ],
+      "@dashgo/services/*": [
+        "./src/services/*"
       ],
       "@dashgo/styles/*": [
         "./src/styles/*"

@@ -8,9 +8,9 @@ import {
   DrawerOverlay,
   useBreakpointValue,
 } from '@chakra-ui/react';
-import { useSidebarDrawer } from 'src/contexts/SidebarDrawerContext';
 
-import { SidebarNav } from './SidebarNav';
+import { SidebarNav } from '@dashgo/components/Sidebar/SidebarNav';
+import { useSidebarDrawer } from '@dashgo/contexts/SidebarDrawerContext';
 
 export function Sidebar() {
   const { isOpen, onClose } = useSidebarDrawer();

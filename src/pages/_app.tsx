@@ -2,10 +2,10 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 import { QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import { SidebarDrawerProvider } from 'src/contexts/SidebarDrawerContext';
-import { makeServer } from 'src/services/mirage';
-import { queryClient } from 'src/services/queryClient';
 
+import { SidebarDrawerProvider } from '@dashgo/contexts/SidebarDrawerContext';
+import { makeServer } from '@dashgo/services/mirage';
+import { queryClient } from '@dashgo/services/queryClient';
 import { theme } from '@dashgo/styles/theme';
 
 if (process.env.NODE_ENV === 'development') {

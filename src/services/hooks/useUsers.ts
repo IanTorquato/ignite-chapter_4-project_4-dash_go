@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query';
-import { api } from 'src/services/api';
+
+import { api } from '@dashgo/services/api';
 
 export type User = {
   id: string;
