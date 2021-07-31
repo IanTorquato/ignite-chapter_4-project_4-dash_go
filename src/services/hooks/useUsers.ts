@@ -1,8 +1,8 @@
-import { useQuery } from 'react-query';
+import { useQuery, UseQueryOptions } from 'react-query';
 
 import { api } from '@dashgo/services/api';
 
-export type User = {
+type User = {
   id: string;
   name: string;
   email: string;
@@ -27,8 +27,9 @@ export async function getUsers(currentPage: number): Promise<GetUsersResponse> {
   return { users, totalCount };
 }
 
-export function useUsers(currentPage: number) {
-  return useQuery(['users', currentPage], () => getUsers(currentPage), {
+export function useUsers(currentPage: number, options: UseQueryOptions) {
+  return useQuery<any>(['users', currentPage], () => getUsers(currentPage), {
     staleTime: 1000 * 60 * 4, // 4 minutes
+    ...options,
   });
 }
