@@ -37,7 +37,7 @@ export default function UserList() {
     lg: true,
   });
 
-  async function handlePrefetchUser(userId: number) {
+  async function handlePrefetchUser(userId: string) {
     await queryClient.prefetchQuery(
       ['user', userId],
       async () => {
@@ -65,7 +65,7 @@ export default function UserList() {
               {!isLoading && isFetching && <Spinner size="sm" color="gray.500" ml="4" />}
             </Heading>
 
-            <NextLink href="users/create" passHref>
+            <NextLink href="/users/create" passHref>
               <Button as="a" size="sm" fontSize="sm" colorScheme="pink" leftIcon={<Icon as={RiAddBoxLine} fontSize="20" />}>
                 Criar novo usuário
               </Button>
@@ -107,7 +107,7 @@ export default function UserList() {
                       <Td>
                         <Box>
                           <Link color="purple.400">
-                            <Text fontWeight="bold" onMouseEnter={() => handlePrefetchUser(Number(user.id))}>
+                            <Text fontWeight="bold" onMouseEnter={() => handlePrefetchUser(user.id)}>
                               {user.name}
                             </Text>
                           </Link>
