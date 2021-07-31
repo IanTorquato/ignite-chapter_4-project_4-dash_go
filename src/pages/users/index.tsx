@@ -25,18 +25,24 @@ import { Pagination } from '@dashgo/components/Pagination';
 import { Sidebar } from '@dashgo/components/Sidebar';
 
 export default function UserList() {
-  const { data, isLoading, error } = useQuery('users', async () => {
-    const response = await fetch('http://localhost:3000/api/users');
+  const { data, isLoading, error } = useQuery(
+    'users',
+    async () => {
+      const response = await fetch('http://localhost:3000/api/users');
 
-    const responseData = await response.json();
+      const responseData = await response.json();
 
-    const users = responseData.users.map((user) => ({
-      ...user,
-      createdAt: new Date(user.createdAt).toLocaleDateString('pt-br', { day: '2-digit', month: 'long', year: 'numeric' }),
-    }));
+      const users = responseData.users.map((user) => ({
+        ...user,
+        createdAt: new Date(user.createdAt).toLocaleDateString('pt-br', { day: '2-digit', month: 'long', year: 'numeric' }),
+      }));
 
-    return users;
-  });
+      return users;
+    },
+    {
+      staleTime: 1000 * 8, // 8 seconds
+    },
+  );
 
   const isWideVersion = useBreakpointValue({
     base: false,
@@ -109,6 +115,7 @@ export default function UserList() {
                   ))}
                 </Tbody>
               </Table>
+
               <Pagination />
             </>
           )}
