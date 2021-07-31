@@ -19,6 +19,7 @@ import {
 import Link from 'next/link';
 import { RiAddBoxLine } from 'react-icons/ri';
 import { useQuery } from 'react-query';
+import { api } from 'src/services/api';
 
 import { Header } from '@dashgo/components/Header';
 import { Pagination } from '@dashgo/components/Pagination';
@@ -28,11 +29,9 @@ export default function UserList() {
   const { data, isLoading, isFetching, error } = useQuery(
     'users',
     async () => {
-      const response = await fetch('http://localhost:3000/api/users');
+      const response = await api.get('/users');
 
-      const responseData = await response.json();
-
-      const users = responseData.users.map((user) => ({
+      const users = response.data.users.map((user) => ({
         ...user,
         createdAt: new Date(user.createdAt).toLocaleDateString('pt-br', { day: '2-digit', month: 'long', year: 'numeric' }),
       }));
