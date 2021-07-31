@@ -17,6 +17,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 import Link from 'next/link';
+import { useState } from 'react';
 import { RiAddBoxLine } from 'react-icons/ri';
 import { useUsers } from 'src/services/hooks/useUsers';
 
@@ -25,7 +26,8 @@ import { Pagination } from '@dashgo/components/Pagination';
 import { Sidebar } from '@dashgo/components/Sidebar';
 
 export default function UserList() {
-  const { data, isLoading, isFetching, error } = useUsers();
+  const [currentPage, setCurrentPage] = useState(1);
+  const { data, isLoading, isFetching, error } = useUsers(currentPage);
 
   const isWideVersion = useBreakpointValue({
     base: false,
@@ -79,7 +81,7 @@ export default function UserList() {
                 </Thead>
 
                 <Tbody>
-                  {data.map((user) => (
+                  {data.users.map((user) => (
                     <Tr key={user.id}>
                       <Td px={['4', '4', '6']}>
                         <Checkbox colorScheme="pink" />
@@ -100,7 +102,7 @@ export default function UserList() {
                 </Tbody>
               </Table>
 
-              <Pagination totalRegisters={200} currentPage={5} onPageChange={() => {}} />
+              <Pagination totalRegisters={data.totalCount} currentPage={currentPage} onPageChange={setCurrentPage} />
             </>
           )}
         </Box>
