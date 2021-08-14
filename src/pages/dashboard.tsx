@@ -9,9 +9,7 @@ const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 const options: ApexOptions = {
   chart: {
-    toolbar: {
-      show: false,
-    },
+    toolbar: { show: false },
     zoom: { enabled: false },
     foreColor: theme.colors.gray[500],
   },

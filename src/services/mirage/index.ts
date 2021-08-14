@@ -11,13 +11,9 @@ type User = {
 
 export function makeServer() {
   const server = createServer({
-    serializers: {
-      application: ActiveModelSerializer,
-    },
+    serializers: { application: ActiveModelSerializer },
 
-    models: {
-      user: Model.extend<Partial<User>>({}),
-    },
+    models: { user: Model.extend<Partial<User>>({}) },
 
     factories: {
       user: Factory.extend({
@@ -51,8 +47,6 @@ export function makeServer() {
         const pageEnd = pageStart + Number(per_page);
 
         const users = schema.all('user').models.slice(pageStart, pageEnd);
-
-        // console.log(users.models);
 
         return new Response(200, { 'x-total-count': String(total) }, { users });
       });

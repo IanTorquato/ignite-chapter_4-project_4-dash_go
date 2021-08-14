@@ -34,10 +34,7 @@ export default function UserList({ users }) {
   const [currentPage, setCurrentPage] = useState(1);
   const { data, isLoading, isFetching, error } = useUsers(currentPage, { initialData: users });
 
-  const isWideVersion = useBreakpointValue({
-    base: false,
-    lg: true,
-  });
+  const isWideVersion = useBreakpointValue({ base: false, lg: true });
 
   async function handlePrefetchUser(userId: string) {
     await queryClient.prefetchQuery(
@@ -136,7 +133,7 @@ export default function UserList({ users }) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const { users, totalCount } = await getUsers(1);
+  const { users } = await getUsers(1);
 
   return {
     props: { users },

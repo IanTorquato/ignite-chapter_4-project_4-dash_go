@@ -32,10 +32,7 @@ export default function CreateUser() {
   const createUser = useMutation(
     async (user: CreateUserFormData) => {
       const response = await api.post('/users', {
-        user: {
-          ...user,
-          created_at: new Date(),
-        },
+        user: { ...user, created_at: new Date() },
       });
 
       return response.data.user;
@@ -72,6 +69,7 @@ export default function CreateUser() {
           <VStack spacing="8">
             <SimpleGrid minChildWidth="240px" spacing={['6', '8']} w="100%">
               <Input name="name" label="Nome completo" {...register('name')} error={formState.errors.name} />
+
               <Input name="email" type="email" label="E-mail" {...register('email')} error={formState.errors.email} />
             </SimpleGrid>
 
@@ -83,6 +81,7 @@ export default function CreateUser() {
                 {...register('password')}
                 error={formState.errors.password}
               />
+
               <Input
                 name="password_confirmation"
                 type="password"
